@@ -10,13 +10,14 @@ func SubtractString(fromSlice, subtractSlice []string) (result []string) {
 		return
 	}
 	hash := make(map[string]bool)
-	for _, e := range fromSlice {
+	for _, e := range subtractSlice {
 		hash[e] = true
 	}
-	for _, e := range subtractSlice {
-		if !hash[e] {
-			result = append(result, e)
+	for _, e := range fromSlice {
+		if hash[e] {
+			continue
 		}
+		result = append(result, e)
 	}
 	return
 }
@@ -31,13 +32,14 @@ func SubtractInt(fromSlice, subtractSlice []int) (result []int) {
 		return
 	}
 	hash := make(map[int]bool)
-	for _, e := range fromSlice {
+	for _, e := range subtractSlice {
 		hash[e] = true
 	}
-	for _, e := range subtractSlice {
-		if !hash[e] {
-			result = append(result, e)
+	for _, e := range fromSlice {
+		if hash[e] {
+			continue
 		}
+		result = append(result, e)
 	}
 	return
 }
@@ -51,13 +53,14 @@ func SubtractInt64(fromSlice, subtractSlice []int64) (result []int64) {
 		return
 	}
 	hash := make(map[int64]bool)
-	for _, e := range fromSlice {
+	for _, e := range subtractSlice {
 		hash[e] = true
 	}
-	for _, e := range subtractSlice {
-		if !hash[e] {
-			result = append(result, e)
+	for _, e := range fromSlice {
+		if hash[e] {
+			continue
 		}
+		result = append(result, e)
 	}
 	return
 }
